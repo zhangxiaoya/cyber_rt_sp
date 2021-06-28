@@ -11,7 +11,6 @@ ENV TZ=Asia/Shanghai
 # apt-get install
 RUN apt-get update \
     && apt-get install -y wget \
-    && apt-get install -y cmake \
     && apt-get install -y apt-utils \
     && apt-get install -y libglib2.0-0 \
     && apt-get install -y vim \
@@ -21,4 +20,18 @@ RUN apt-get update \
     && apt-get install -y pkg-config \
     && apt-get install -y libpoco-dev \
     && apt-get install -y libpocofoundation50 \
-    && apt-get install -y libasio-dev libtinyxml2-dev libncurses5-dev libgflags-dev locate libatomic1 libboost-atomic-dev libboost-atomic1.65-dev libboost-atomic1.65.1 libgflags-dev
+    && apt-get install -y libasio-dev libtinyxml2-dev \
+    && apt-get install -y libncurses5-dev libgflags-dev \
+    && apt-get install -y locate libatomic1 libboost-atomic-dev \
+    && apt-get install -y libboost-atomic1.65-dev libboost-atomic1.65.1 libgflags-dev
+
+# install new cmake
+RUN mkdir -p /opt/tmp \
+    && cd /opt/tmp \
+    && wget https://github.com/Kitware/CMake/releases/download/v3.20.5/cmake-3.20.5-linux-x86_64.tar.gz \a
+    && tar -zxvf cmake-3.20.5-linux-x86_64.tar.gz \
+    && mv cmake-3.20.5-linux-x86_64 cmake-3.20.5 \
+    && mv cmake-3.20.5 /usr/local/ \
+    && rm cmake-3.20.5-linux-x86_64.tar.gz
+
+ENV PATH $PATH:/usr/local/cmake-3.20.5/bin
