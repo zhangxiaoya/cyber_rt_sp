@@ -20,6 +20,9 @@ target_link_libraries(cyber_monitor
     Cyber::core
     Cyber::blocker_manager
     Cyber::endpoint
+    Cyber::clock
+    Cyber::binary
+    cyber_time_clock
     )
 
 file(GLOB HEADERS *.h)
