@@ -8,6 +8,9 @@ add_library(cyber_rate rate.cc)
 add_library(cyber_time  time.cc)
 target_link_libraries(cyber_time cyber_duration)
 
+add_library(cyber_time_clock clock.cc)
+target_link_libraries(cyber_time_clock cyber_global_data)
+
 add_library(Cyber::duration ALIAS cyber_duration)
 add_library(Cyber::rate ALIAS cyber_rate)
 add_library(Cyber::time ALIAS cyber_time)
