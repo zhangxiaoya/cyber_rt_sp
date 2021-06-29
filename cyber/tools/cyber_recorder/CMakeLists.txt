@@ -26,6 +26,9 @@ target_link_libraries(cyber_recorder
     Cyber::core
     Cyber::blocker_manager
     Cyber::endpoint
+    Cyber::clock
+    cyber_time_clock
+    Cyber::binary
     )
 
 file(GLOB HEADERS *.h)
