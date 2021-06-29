@@ -68,7 +68,7 @@ add_subdirectory(cyber/time)
 add_subdirectory(cyber/timer)
 add_subdirectory(cyber/transport)
 add_subdirectory(cyber)
-add_subdirectory(cyber/py_wrapper)
+# add_subdirectory(cyber/py_wrapper)
 
 add_subdirectory(cyber/mainboard)
 add_subdirectory(cyber/examples)
